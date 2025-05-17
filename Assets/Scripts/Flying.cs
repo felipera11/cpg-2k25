@@ -15,7 +15,7 @@ public class Flying : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.right * speed * Time.deltaTime;
 
         Collider2D box = Physics2D.OverlapBox(transform.position, Vector2.one * 0.2f, 0, LayerMask.GetMask("Shot"));
         if(box != null) {
@@ -26,7 +26,7 @@ public class Flying : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (transform.position.x <= -5) {
+        if (transform.position.x >= 5) {
             Destroy(gameObject);
 
         }

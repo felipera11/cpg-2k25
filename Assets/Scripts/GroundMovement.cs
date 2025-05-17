@@ -18,7 +18,7 @@ public class GroundMovement : MonoBehaviour {
     void Update() {
 
        for(int i = 0; i < grounds.Length; ++i) {
-            grounds[i].transform.position += Vector3.left * speed * Time.deltaTime;
+            grounds[i].transform.position += Vector3.right * speed * Time.deltaTime;
             if(grounds[i].transform.position.x <= endPosition.x) {
                 grounds[i].transform.position = startPosition;
                 grounds[i].sprite = groundSprites[Random.Range(0, groundSprites.Length)];

@@ -18,6 +18,8 @@ public class Dino : MonoBehaviour {
         gravity = (2 * maxHeight) / Mathf.Pow(timeToPeak, 2);
         jumpSpeed = gravity * timeToPeak;
 
+        transform.position = new Vector3(3, transform.position.y, transform.position.z);
+
         groundPosition = transform.position.y;
     }
 

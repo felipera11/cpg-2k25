@@ -41,7 +41,7 @@ public class EnemySpawn : MonoBehaviour
 
         // spawn cactus
         if(Time.time > cactus.instantiateTime && !stopSpawn) {
-            GameObject obj = Instantiate(cactusPrefabRef, new Vector3(5, -0.9f), Quaternion.identity);
+            GameObject obj = Instantiate(cactusPrefabRef, new Vector3(-7, -0.9f), Quaternion.identity);
             obj.GetComponent<SpriteRenderer>().sprite = cactusSprites[Random.Range(0, cactusSprites.Length)];
             obj.AddComponent<BoxCollider2D>();
             obj.GetComponent<Cactus>().speed = speed;
@@ -50,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
 
         // spawn flying
         if (Time.time > flying.instantiateTime && !stopSpawn) {
-            GameObject obj = Instantiate(flyingPrefabRef, new Vector3(5, Random.Range(flyingMax, flyingMin)), Quaternion.identity);
+            GameObject obj = Instantiate(flyingPrefabRef, new Vector3(-7, Random.Range(flyingMax, flyingMin)), Quaternion.identity);
             flying.instantiateTime = Time.time + Random.Range(flying.interval - flying.variation, flying.interval + flying.variation);
         }
 
